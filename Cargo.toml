@@ -1,0 +1,12 @@
+[package]
+name = "rust-libtextcat"
+version = "0.1.0"
+authors = ["Vlad Zamfir <v.zamfir@jacobs-university.de>"]
+build = "build.rs"
+
+[dependencies]
+libc = "~0.1"
+gcc = "0.3.25"
+
+[lib]
+name="libtextcat"
