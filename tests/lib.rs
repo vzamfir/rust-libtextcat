@@ -3,23 +3,22 @@ extern crate libtextcat;
 use libtextcat::Textcat;
 
 #[test]
-// Test Textcat initialization.
+/// Test Textcat initialization.
 fn test_load_handle() {
 	let textcat = Textcat::new();
 }
 
 #[test]
-// Test language detection for random English text.
+/// Test language detection for random English text.
 fn test_language_english_short() {
 	let textcat = Textcat::new();
 	let text = "The pen is mightier than the sword.";
 	let result = textcat.get_language(text);
-	let expected_result = "[english]";
-	assert_eq!(true, result.contains(expected_result));
+	assert_eq!(result, ["english"]);
 }
 
 #[test]
-// Test language detection for random (longer) English text.
+/// Test language detection for random (longer) English text.
 fn test_language_english_long() {
 	let textcat = Textcat::new();
 	let text = "Game of as rest time eyes with of this it. 
@@ -39,28 +38,25 @@ fn test_language_english_long() {
 		Servants margaret husbands to screened in throwing. Imprudence 
 		oh an collecting partiality. Admiration gay difficulty unaffected how. ";
 	let result = textcat.get_language(text);
-	let expected_result = "[english]";
-	assert_eq!(true, result.contains(expected_result));
+	assert_eq!(result, ["english"]);
 }
 
 #[test]
-// Test language detection for random Spanish text.
+/// Test language detection for random Spanish text.
 fn test_language_spanish() {
 	let textcat = Textcat::new();
 	let m = " Los puntos de 
 		acceso inalámbricos son relativamente poco 
 		costosos y se implementan fácilmente.";
 	let result = textcat.get_language(m);
-	let expected_result = "[spanish]";
-	assert_eq!(true, result.contains(expected_result));
+	assert_eq!(result, ["spanish", "portuguese"]);
 }
 
 #[test]
-// Test language detection for random Romanian text.
+/// Test language detection for random Romanian text.
 fn test_language_romanian() {
 	let textcat = Textcat::new();
 	let text = "Fie matricea A. Calculati minorul elementului 3!";
 	let result = textcat.get_language(text);
-	let expected_result = "[romanian]";
-	assert_eq!(true, result.contains(expected_result));
+	assert_eq!(result, ["romanian"]);
 }

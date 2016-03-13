@@ -46,6 +46,7 @@ void *l_textcat_Init(const char* LIBTEXT_LANGUAGES_PATH)
         basque.lm\t\t\tbasque\n\
         belarus-windows1251.lm\tbelarus-windows1251\n\
         bosnian.lm\t\t\tbosnian\n\
+        breton.lm\t\t\tbreton\n\
         bulgarian-iso8859_5.lm\tbulgarian-iso8859_5\n\
         catalan.lm\t\t\tcatalan\n\
         chinese-big5.lm\t\tchinese-big5\n\
@@ -79,6 +80,7 @@ void *l_textcat_Init(const char* LIBTEXT_LANGUAGES_PATH)
         malay.lm\t\t\tmalay\n\
         manx.lm\t\t\tmanx\n\
         marathi.lm\t\t\tmarathi\n\
+        middle_frisian.lm\t\tmiddle_frisian\n\
         mingo.lm\t\t\tmingo\n\
         nepali.lm\t\t\tnepali\n\
         norwegian.lm\t\t\tnorwegian\n\
@@ -92,6 +94,8 @@ void *l_textcat_Init(const char* LIBTEXT_LANGUAGES_PATH)
         russian-koi8_r.lm\t\trussian-koi8_r\n\
         russian-windows1251.lm\trussian-windows1251\n\
         sanskrit.lm\t\t\tsanskrit\n\
+        scots.lm\t\t\tscots\n\
+        scots_gaelic.lm\t\tscots_gaelic\n\
         serbian-ascii.lm\t\tserbian-ascii\n\
         slovak-ascii.lm\t\tslovak-ascii\n\
         slovak-windows1250.lm\tslovak-windows1250\n\
