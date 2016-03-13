@@ -3,11 +3,13 @@ extern crate libtextcat;
 use libtextcat::Textcat;
 
 #[test]
+// Test Textcat initialization.
 fn test_load_handle() {
 	let textcat = Textcat::new();
 }
 
 #[test]
+// Test language detection for random English text.
 fn test_language_english_short() {
 	let textcat = Textcat::new();
 	let text = "The pen is mightier than the sword.";
@@ -17,7 +19,7 @@ fn test_language_english_short() {
 }
 
 #[test]
-// random english text
+// Test language detection for random (longer) English text.
 fn test_language_english_long() {
 	let textcat = Textcat::new();
 	let text = "Game of as rest time eyes with of this it. 
@@ -42,7 +44,7 @@ fn test_language_english_long() {
 }
 
 #[test]
-// random Spanish text.
+// Test language detection for random Spanish text.
 fn test_language_spanish() {
 	let textcat = Textcat::new();
 	let m = " Los puntos de 
@@ -54,7 +56,7 @@ fn test_language_spanish() {
 }
 
 #[test]
-// random Romanian text.
+// Test language detection for random Romanian text.
 fn test_language_romanian() {
 	let textcat = Textcat::new();
 	let text = "Fie matricea A. Calculati minorul elementului 3!";

@@ -15,6 +15,6 @@ char *l_get_language(void *tc_handle, const char *text, size_t text_size);
  * @param LIBTEXT_LANGUAGES_PATH path to the libtextcat language files.
  * @return libtextac handle.
  */
-void *l_textcat_Init(const char* LIBTEXT_LANGUAGES_PATH);    //returns a textcat handle (has to be freed by calling textcat_Done)
+void *l_textcat_Init(const char* LIBTEXT_LANGUAGES_PATH);
 
 
