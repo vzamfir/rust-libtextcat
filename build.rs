@@ -2,10 +2,10 @@ fn main() {
     let out_dir = std::env::var("OUT_DIR").unwrap();
     let pwd = std::env::var("CARGO_MANIFEST_DIR").unwrap();
 
-   /* // store senna path
+    // store libtextcat path
     std::process::Command::new("sh")
-        .args(&["set_senna_path.sh", &format!("{}/senna/", pwd)])
-        .status().unwrap();*/
+        .args(&["set_libtextcat_path.sh", &format!("{}/libtextcat-2.2/langclass/LM/", pwd)])
+        .status().unwrap();
 
     // build c stuff
     std::process::Command::new("make")
