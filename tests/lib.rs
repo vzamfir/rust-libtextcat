@@ -10,58 +10,55 @@ fn test_load_handle() {
 #[test]
 fn test_language_english_short() {
 	let textcat = Textcat::new();
-	let s = "Knock Knock! Who's there?";
-	let result = textcat.get_language(s);
-	assert_eq!("[english]", result);
+	let text = "The pen is mightier than the sword.";
+	let result = textcat.get_language(text);
+	let expected_result = "[english]";
+	assert_eq!(true, result.contains(expected_result));
 }
 
 #[test]
+// random english text
 fn test_language_english_long() {
 	let textcat = Textcat::new();
-	let s = "The quick brown fox jumps over the lazy dog";
-	let result = textcat.get_language(s);
-	assert_eq!("[english]", result);
+	let text = "Game of as rest time eyes with of this it. 
+		Add was music merry any truth since going. 
+		Happiness she ham but instantly put departure propriety. 
+		She amiable all without say spirits shy clothes morning. 
+		Frankness in extensive to belonging improving so certainty. 
+		Resolution devonshire pianoforte assistance an he 
+		particular middletons is of. Explain ten man uncivil engaged 
+		conduct. Am likewise betrayed as declared absolute do. Taste 
+		oh spoke about no solid of hills up shade. Occasion so bachelor 
+		humoured striking by attended doubtful be it. 
+		Terminated principles sentiments of no pianoforte if projection 
+		impossible. Horses pulled nature favour number yet highly his has 
+		old. Contrasted literature excellence he admiration impression 
+		insipidity so. Scale ought who terms after own quick since. 
+		Servants margaret husbands to screened in throwing. Imprudence 
+		oh an collecting partiality. Admiration gay difficulty unaffected how. ";
+	let result = textcat.get_language(text);
+	let expected_result = "[english]";
+	assert_eq!(true, result.contains(expected_result));
 }
 
 #[test]
+// random Spanish text.
 fn test_language_spanish() {
 	let textcat = Textcat::new();
 	let m = " Los puntos de 
-acceso inalámbricos son relativamente poco co
-stosos y se implementan fácilmente. Un 
-equipo de asesores bienintencionado que tr
-abaja en una sala de
- conferencias podría 
-instalar un punto de acceso inalámbrico para 
-compartir un solo puerto cableado en la sala. 
-Un 
-hacker
- malicioso puede sentarse en un café c
-on un ordenador portátil habilitado para 
-uso inalámbrico buscando tráfico no cifrado o cifrado con WEP. En ambos casos, se 
-presentan riesgos inaceptables. Independiente
-mente de si hay un intento malicioso, la 
-introducción de 
-hardware
- no autorizado puede comprometer la confidencialidad e 
-integridad del tráfico de red. Los dispositivos inalámbricos no autorizados pueden 
-detectarse al examinar físicamente las in
-stalaciones (práctica 
-conocida como “guerra 
-móvil”), al utilizar escáneres de radiofrecuen
-cia (RF) para determinar la ubicación de los 
-dispositivos inalámbricos o al usar sistemas di
-señados para analizar el
- tráfico de red para 
-detectar dispositivos no autorizados. ";
+		acceso inalámbricos son relativamente poco 
+		costosos y se implementan fácilmente.";
 	let result = textcat.get_language(m);
-	assert_eq!("[spanish]", result);
+	let expected_result = "[spanish]";
+	assert_eq!(true, result.contains(expected_result));
 }
 
 #[test]
+// random Romanian text.
 fn test_language_romanian() {
 	let textcat = Textcat::new();
-	let m = "Fie matricea A. Calculati minorul elementului 3!";
-	let result = textcat.get_language(m);
-	assert_eq!("[romanian]", result);
+	let text = "Fie matricea A. Calculati minorul elementului 3!";
+	let result = textcat.get_language(text);
+	let expected_result = "[romanian]";
+	assert_eq!(true, result.contains(expected_result));
 }

@@ -1,27 +1,37 @@
+/**
+ * Rust wrapper for the libtextcat library.
+ * It detects the language of an input text.
+ */
+
 extern crate libc;
 
-use libc::{c_char, c_void, size_t, c_int};
+use libc::{c_char, c_void, size_t};
 use std::ffi::{CString, CStr};
 use std::str;
 
+// Basic libtextcat structure, containing the handle from libtextcat initialization.
 pub struct Textcat{
 	handle : *mut c_void,
 }
 
 impl Textcat{
+	// Contructor for a new Textcat. It creates the libtextcat handle.
 	pub fn new() -> Textcat {
 		Textcat{
 			handle: unsafe { l_textcat_Init(CString::new("libtextcat-2.2/langclass/LM/").unwrap().as_ptr()) },
 		}
 	}
 
+	// Detects the language of the input text. Return format: "[language]".
 	pub fn get_language(&self, text : &str) -> &str {
 		let text_size = text.len();
-		let c_buf: *const c_char = unsafe { l_get_language(self.handle, CString::new(text).unwrap().as_ptr(), text_size as u64) };
+		let c_buf: *mut c_char = unsafe { l_get_language(self.handle, CString::new(text).unwrap().as_ptr(), text_size as u64) };
+		// convert the c_char result from the c funtion to a rust &str.
 		let c_str: &CStr = unsafe { CStr::from_ptr(c_buf) };
 		let buf: &[u8] = c_str.to_bytes();
-		let str_slice: &str = str::from_utf8(buf).unwrap();
-		return str_slice;
+		let language: &str = str::from_utf8(buf).unwrap();
+
+		return language;
 	}
 }
 
