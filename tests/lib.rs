@@ -36,7 +36,13 @@ fn test_language_english_long() {
 		old. Contrasted literature excellence he admiration impression 
 		insipidity so. Scale ought who terms after own quick since. 
 		Servants margaret husbands to screened in throwing. Imprudence 
-		oh an collecting partiality. Admiration gay difficulty unaffected how. ";
+		oh an collecting partiality. Now for manners use has company 
+		believe parlors. Least nor party who wrote while did. Excuse 
+		formed as is agreed admire so on result parish. Put use set 
+		uncommonly announcing and travelling. Allowance sweetness 
+		direction to as necessary. Principle oh explained excellent 
+		do my suspected conveying in. Excellent you did therefore 
+		perfectly supposing described. ";
 	let result = textcat.get_language(text);
 	assert_eq!(result, ["english"]);
 }
