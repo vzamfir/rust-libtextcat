@@ -4,7 +4,6 @@
 
 #include "language_detection.h"
 
-//a bit hacked, but it works:
 #include <textcat.c>
 
 //Reason: Datatypes required for textcat_Init are declared in .c file

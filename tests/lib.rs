@@ -1,6 +1,6 @@
 extern crate libtextcat;
 
-use libtextcat::Textcat;
+use libtextcat::libtextcat::Textcat;
 
 #[test]
 /// Test Textcat initialization.

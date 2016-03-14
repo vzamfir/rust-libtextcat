@@ -1,6 +1,3 @@
-
-#include "../../libtextcat-2.2/src/textcat.h"
-
 /**
  * Function 
  * @param tc libtextcat handle

@@ -1,3 +1,6 @@
+//! Compile libtextcat and language_detection.c
+//! The actual compilation is managed by the make file `Makefile`
+
 fn main() {
     let out_dir = std::env::var("OUT_DIR").unwrap();
     let pwd = std::env::var("CARGO_MANIFEST_DIR").unwrap();
@@ -9,12 +12,12 @@ fn main() {
 
     // build c stuff
     std::process::Command::new("make")
-        .args(&["static_lib", "-f", "makefile", &format!("OUT_DIR={}", out_dir), "LIBTEXTCAT_DIR=libtextcat-2.2/src"])
+        .args(&["static_lib", "-f", "Makefile", &format!("OUT_DIR={}", out_dir), "LIBTEXTCAT_DIR=libtextcat-2.2/src"])
         .status().unwrap();
 
     // `make clean` (only removes *.o files)
     std::process::Command::new("make")
-        .args(&["clean", "-f", "makefile", &format!("OUT_DIR={}", out_dir), "LIBTEXTCAT_DIR=libtextcat-2.2/src"])
+        .args(&["clean", "-f", "Makefile", &format!("OUT_DIR={}", out_dir), "LIBTEXTCAT_DIR=libtextcat-2.2/src"])
         .status().unwrap();
 
     println!("cargo:rustc-link-search=native={}", out_dir);
